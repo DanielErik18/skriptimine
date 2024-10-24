@@ -2,5 +2,8 @@
 # kasutajad tervitab skript
 
 echo -n "Tere, "
-echo -n `whoami`
+# Võtab teeb esitähe suureks
+echo -n `whoami|cut -c1 |tr 'a-z' 'A-Z'`
+# Võtab ülejäänud karakterid whoami commandist
+echo -n `whoami | cut -c 2-`
 echo "!"
