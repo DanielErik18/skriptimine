@@ -1,0 +1,6 @@
+#!/bin/bash
+# kasutajad tervitab skript
+
+echo -n "Tere, "
+echo -n `whoami`
+echo "!"
