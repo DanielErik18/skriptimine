@@ -9,5 +9,12 @@ read kohad
 bussid=$(($reisijad / $kohad))
 mahajaab=$(($reisijad % $kohad))
 
-echo "$reisijad-reisja transportimiseks saab kasutada $bussid-te $kohad-list bussi, mahajääb $mahajaab inimest."
+#echo "$reisijad-reisja transportimiseks saab kasutada $bussid-te $kohad-list bussi, mahajääb $mahajaab inimest."
 
+if test $mahajaab -gt 0
+then
+	bussid=$(($bussid + 1))
+	echo "$reisijad-reisja transportimiseks tuleb kasutada $bussid-e $kohad-list bussi, muidu jääks maha $mahajaab inimest."
+else
+	echo "Kõik reisijad mahuvad täpselt ära."
+fi
