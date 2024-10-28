@@ -1,0 +1,24 @@
+#!/bin/bash
+
+#Küsib kasutjalt vanuse
+read -p "Sisesta oma vanus: " vanus
+
+#Vaatab kas vanus on vahemikus 0-11
+if test $vanus -gt 0 -a $vanus -lt 11
+then
+	echo "Oled laps"
+#Vaatab kas vanus on väiksem, kui 18
+elif test $vanus -lt 18
+then
+	echo "Oled nooruk"
+#Vaatab kas vanus on väiksem kui 63
+elif test $vanus -lt 63
+then
+	echo "Oled täiskasvanu"
+#Vaatab kas vanus on suurem või võrdne 63-ga
+elif test $vanus -ge 63
+then
+	echo "Oled senjoor"
+else
+	"Veateade, sisesta arv!"
+fi
