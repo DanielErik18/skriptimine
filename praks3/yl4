@@ -9,12 +9,14 @@ read kohad
 bussid=$(($reisijad / $kohad))
 mahajaab=$(($reisijad % $kohad))
 
-#echo "$reisijad-reisja transportimiseks saab kasutada $bussid-te $kohad-list bussi, mahajääb $mahajaab inimest."
+#If lause, mis kontrollib, kas maajäänute arv on suurem kui 0.
 
 if test $mahajaab -gt 0
 then
+#Kui on suurem kui 0, täidab all olevad tingimused
 	bussid=$(($bussid + 1))
 	echo "$reisijad-reisja transportimiseks tuleb kasutada $bussid-e $kohad-list bussi, muidu jääks maha $mahajaab inimest."
 else
+#Kui ei ole suurem, kui 0 ehk võrdne 0-ga siis täidab seda tingimust
 	echo "Kõik reisijad mahuvad täpselt ära."
 fi
