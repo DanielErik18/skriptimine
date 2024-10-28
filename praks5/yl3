@@ -1,0 +1,20 @@
+#!/bin/bash
+
+read -p "Sisesta aja väärtus: " aeg
+#Kontrollib, kas sisestatud aeg on vahemikus 6-11
+if test $aeg -ge 6 -a $aeg -lt 12; then
+	echo "Tere hommikust!"
+#Kontrollib, kas sisestatud aeg on vahemikus 12-17
+elif test $aeg -ge 12 -a $aeg -lt 18; then
+	echo "Tere päevast!"
+#Kontrollib kas antud aeg on vahemikus 18-21
+elif test $aeg -ge 18 -a $aeg -lt 22; then
+        echo "Tere, õhtust!"
+#Võtab kõik ülejäänud ajad, mis on väiksemad, kui 24
+elif test $aeg -le 23;then
+	echo "Head, ööd!"
+#Vale sisestuse korral, ütleb kasutajale
+else
+	echo "Vale sisend"
+
+fi
