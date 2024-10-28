@@ -1,15 +1,18 @@
 #!/bin/bash
 
-#Palub kasutajal sisestada arvu
-read -p "Sisesta suvaline täisarv: " arv
-
-#Leiaba arvu jäägi
-jaak=$(($arv % 2))
-
-#Kontrollib kas jääk on võrdne 0-ga, kui on teeb then hargu, kui ei ole teeb else hargu. 
-if [ $jaak == 0 ] 
+#Kontrollib kas skripti käivitamisel on kaasa antud mingi väärtus.
+if [ $# != 1 ]
 then
-	echo "$arv on paaris."
+#Kui ei ole antud väärtust palub kasutajal sisestada skriptiga mõni arv
+	echo "Käivita skript koos arvuga, mille paarsust soovid kontrollida."
 else
-	echo "$arv on paaritu."
+#Kui on antud väärtus hakkab kontrollima selle paaris või paaritus olekut.
+	arv=$1
+	jaak=$(($arv % 2))
+	if [ $jaak == 0 ]
+	then
+		echo "$arv on paaris."
+	else
+		echo "$arv on paaritu."
+	fi
 fi
