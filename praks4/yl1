@@ -1,0 +1,15 @@
+#!/bin/bash
+
+#Palub kasutajal sisestada arvu
+read -p "Sisesta suvaline täisarv: " arv
+
+#Leiaba arvu jäägi
+jaak=$(($arv % 2))
+
+#Kontrollib kas jääk on võrdne 0-ga, kui on teeb then hargu, kui ei ole teeb else hargu. 
+if [ $jaak == 0 ] 
+then
+	echo "$arv on paaris."
+else
+	echo "$arv on paaritu."
+fi
