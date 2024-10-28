@@ -1,0 +1,15 @@
+#!/bin/bash
+
+echo -n "Sisestage ainepunktide arv: "
+read ainepunktid
+
+echo -n "Sisestage nädalate arv: "
+read nadalad
+
+eapkulu=$((26*$ainepunktid))
+
+aeg=`echo "scale=1;$eapkulu/$nadalad" | bc`
+
+aeg_ymarda="`echo "($aeg+0.9)/1" | bc`"
+
+echo $aeg_ymarda
