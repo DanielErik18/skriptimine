@@ -1,0 +1,23 @@
+#!/bin/bash
+
+#Laseb kasutajal sisesatada arvu
+read -p "Sisesta suvaline arv: " arv
+#Vaatab kas arv on vähem kui 2 ehk 1 ja 0 ja negatiivsed
+#Kui tingimus on täidetud pole vaja kaugemal vaadata ja võib väljastada, et antud arv ei ole algarv
+if [ $arv -lt 2 ]; then
+	echo "$arv ei ole algarv"
+	exit 0
+#Kui tingimus ei ole täidetud liigub edasi
+else
+#Vaatab kas antud arv jagub mõne arvuga alustades 2-st ja lõpetades arv/2.
+	for((i=2; i<=$arv/2; i++))
+	do
+#Kui mõne jagatise jääk on 0, tähendab see, et arv pole algarv ja väljastab selle ja lõppetab programmi töö
+		vastus=$(( arv%i ))
+		if [ $vastus -eq 0 ]; then
+		echo "$arv ei ole algarv"; exit 0
+		fi
+	done
+fi
+#Kui eelnevalt ei täidetud ühtegi tingimust järelikult on algarv ja programm väljastab selle.
+echo "$arv on algarv"
