@@ -1,0 +1,16 @@
+#!/bin/bash
+
+#Laseb kasutajal sisesatada täisarvu
+read -p "Sisesta suvaline täisarv: " arv
+
+summa=0
+while [ $arv -ne 0 ]
+do
+#Avutab arvu osade summa
+
+	jaak=$(($arv % 10))
+	summa=$(($summa + $jaak))
+	arv=$(($arv / 10))
+done
+#Väljastab tulemuse
+echo "Sinu sisesataud arvu numbrite summa on: $summa"
